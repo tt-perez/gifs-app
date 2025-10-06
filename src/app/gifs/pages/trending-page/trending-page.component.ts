@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { GifsListComponent } from "../../components/gifs-list/gifs-list.component";
+import { GifsService } from '../../services/gifs.service';
 
 
-const imageUrl: string[] = [
+/*const imageUrl: string[] = [
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
@@ -15,7 +16,7 @@ const imageUrl: string[] = [
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
-];
+];*/
 
 @Component({
   selector: 'app-trending-page',
@@ -23,5 +24,6 @@ const imageUrl: string[] = [
   templateUrl: './trending-page.component.html',
 })
 export default class TrendingPageComponent {
-  gifs= imageUrl;
+  gifService = inject(GifsService);
+  
  }
